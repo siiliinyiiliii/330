@@ -38,13 +38,17 @@
     .phone {
     width: 100vw;
     height: 100dvh;
-    padding-bottom: env(safe-area-inset-bottom);
     box-sizing: border-box;
 }
 
 #phone-screen {
     height: 100%;
     /* 移除原来的 calc(100dvh - env(safe-area-inset-bottom)) */
+}
+#chat-input-area {
+    padding: 8px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+    /* 其他样式保持不变 */
 }
 
 }
