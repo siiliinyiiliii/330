@@ -13,14 +13,14 @@
             font-weight: normal;
             background-color: #f0f2f5;
             height: 100%; 
-            overflow: hidden;
+
             touch-action: manipulation; /* 限制触摸行为为仅操作（如点击），禁止滑动等手势 */
     -webkit-touch-callout: none; /* 禁止iOS长按弹出菜单 */
     user-select: none; /* 禁止文本选择，减少交互干扰 */
         }
         #phone-screen {
             width: 100%;
-            height: 100vh; 
+            height: 100dvh;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -37,6 +37,11 @@
 @media not all and (display-mode: standalone) {
     .phone {
         height: 100dvh; /* 浏览器模式下使用动态视口高度，适配iOS工具栏变化 */
+        padding-bottom: env(safe-area-inset-bottom);
+        box-sizing: border-box;
+    }
+    #phone-screen {
+        height: calc(100dvh - env(safe-area-inset-bottom));
     }
 }
 
