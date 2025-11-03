@@ -36,13 +36,17 @@
 
 @media not all and (display-mode: standalone) {
     .phone {
-        height: 100dvh; /* 浏览器模式下使用动态视口高度，适配iOS工具栏变化 */
-        padding-bottom: env(safe-area-inset-bottom);
-        box-sizing: border-box;
-    }
-    #phone-screen {
-        height: calc(100dvh - env(safe-area-inset-bottom));
-    }
+    width: 100vw;
+    height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
+}
+
+#phone-screen {
+    height: 100%;
+    /* 移除原来的 calc(100dvh - env(safe-area-inset-bottom)) */
+}
+
 }
 
 .nav-bar {
